@@ -1,0 +1,145 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    scroll-margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: yellow;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    margin-top: 50px;
+    padding: 20px;
+    width: 60%;
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    background-color: green;
+    padding: 20px;
+}
+
+.about p {
+    color: white;
+}
+
+.overview {
+    padding: 10px;
+}
+
+.profile {
+    display: grid;
+    grid-template-rows: 1f 1fr;
+}
+
+.image-container {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    background-color: red;
+    width: 200px;
+    border-radius: 100%;
+    border: solid black;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 200px;
+}
+
+.accounts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: blue;
+    height: 30px;
+}
+
+.overview li{
+    margin: 15px;
+}
+
+.education {
+    background-color: yellow;
+}
+
+.school {
+    height: 200px;
+    background-color: blue;
+}
+
+
+.projects {
+    background-color: green;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 400px;
+}
+
+.project-card {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    background-color: yellow;
+    height: 90%;
+    width: 90%;
+    border-radius: 10px;
+}
+
+.skills {
+    background-color: yellow;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+}
+
+.skill {
+    background-color: blue;
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-form {
+    background-color: green;
+    row-gap: 20px;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 50px 50px 200px 50px;
+    padding: 20px;
+}
