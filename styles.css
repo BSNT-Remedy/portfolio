@@ -89,7 +89,14 @@ section {
 }
 
 .myName {
-    color: #ff7e5f;
+    /* color: #ff7e5f; */
+    background: linear-gradient(90deg, #ff7e5f, #feb47b, #ff7e5f);
+    /* background: linear-gradient(270deg, #ff6ec4, #ff7e5f, #4adede, #ff6ec4); */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* color: transparent; */
+    /* animation: gradientMove 8s ease infinite; */
 }
 
 .title {
@@ -330,4 +337,9 @@ section {
     animation: float 4s ease-in-out infinite;
   }
 
+@keyframes gradientMove {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 */
