@@ -487,27 +487,11 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px;
-    height: 173px;
-    background: rgba(255, 255, 255, 0.1);
-    /* backdrop-filter: blur(10); */
-    clip-path: polygon(50% 0%,
-            /* top */
-            100% 25%,
-            /* top-right */
-            100% 75%,
-            /* bottom-right */
-            50% 100%,
-            /* bottom */
-            0% 75%,
-            /* bottom-left */
-            0% 25%
-            /* top-left */
-        );
 }
 
 .skill img {
     width: 60%;
+    filter: drop-shadow(0 0 6px #3b82f6) drop-shadow(0 0 12px #3b82f6);
 }
 
  .certificates {
@@ -614,46 +598,122 @@ section {
 
 .form-container {
     display: flex;
-    justify-self: center;
+    justify-content: center;
 }
 
 .contact-form {
-    background-color: green;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    border-radius: 4px;
+    padding: 40px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-form h2 {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.user-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
 .user-input input {
     width: 250px;
-    height: 30px;
-    border-radius: 4px;
-    border: none;
+    height: 40px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     margin: 5px;
+    padding: 0 15px;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: white;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.user-input input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.user-input input:focus {
+    border-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.12);
 }
 
 .contact-form textarea {
-    width: 520px;
+    width: 550px;
     height: 150px;
-    border-radius: 4px;
+    border-radius: 6px;
     margin: 5px;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.08);
+    color: white;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    resize: vertical;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.contact-form textarea:focus {
+    border-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.12);
 }
 
 .send-btn {
     border: none;
-    background-color: purple;
+    background-color: #6b46c1;
     color: white;
-    padding: 10px;
-    margin: 5px;
-    width: 525px;
-    border-radius: 4px;
+    padding: 12px 20px;
+    margin: 15px 5px 5px 5px;
+    width: 580px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
-/* FUTURE ANIMATIONS */
+.send-btn:hover {
+    background-color: #7c3aed;
+    transform: translateY(-1px);
+}
 
+.send-btn:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+    .contact-form {
+        padding: 30px 20px;
+    }
+    
+    .user-input {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .user-input input,
+    .contact-form textarea,
+    .send-btn {
+        width: 280px;
+    }
+}
+
+/* ANIMATIONS */
 @keyframes float {
     0% {
         transform: translateY(0);
