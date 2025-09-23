@@ -510,24 +510,106 @@ section {
     width: 60%;
 }
 
-
-.certificates {
-    background-color: green;
+ .certificates {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 300px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+    padding: 0 1rem;
 }
 
 .cert-card {
+    position: relative;
+    border-radius: 12px;
+    padding: 1.5rem;
+    overflow: hidden;
+    transition: transform 0.5s ease, box-shadow 0.3s ease, background 0.5s ease-in-out;
+    border-radius: 12px;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    justify-self: center;
-    align-self: center;
-    background-color: blue;
-    height: 90%;
-    width: 90%;
+    align-items: center;
+    color: white;
+}
+
+.cert-card:hover {
+    transform: translateY(-10px);
+    color: black;
+}
+
+.cert-card:hover .cert-card *{
+    color: black;
+}
+  
+.cert-card::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(
+      270deg,
+      #ff6ec4,
+      #7873f5,
+      #4ade80,
+      #facc15,
+      #ff6ec4
+    );
+    background-size: 600% 600%;
+    border-radius: 14px;
+    animation: borderMove 8s linear infinite;
+    z-index: 0;
+}
+  
+.cert-card::after {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background: #000000;
     border-radius: 10px;
-    padding-left: 10px;
+    z-index: 1;
+}
+  
+.cert-card * {
+    position: relative;
+    z-index: 2;
+}
+  
+@keyframes borderMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+  
+.cert-card:hover::after {
+    background: transparent;
+}
+
+.cert-image {
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #61DAFB;
+}
+
+.cert-image img {
+    width: 100%;
+    border-radius: 4px;
+    object-fit: contain;
+}
+
+.cert-card h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    padding: 10px;
+    text-align: center;
+}
+  
+.cert-card h6 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 0.8rem;
 }
 
 .form-container {
