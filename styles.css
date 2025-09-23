@@ -67,6 +67,9 @@ section {
 
 .nav-links {
     display: flex;
+    width: 60%;
+    min-width: 900px;
+    justify-self: center;
     justify-content: space-around;
 }
 
@@ -84,32 +87,40 @@ section {
     min-width: 800px;
 }
 
-.home {}
-
 .myName {
     /* color: #ff7e5f; */
     background: linear-gradient(90deg, #ff7e5f, #feb47b, #ff7e5f);
-    /* background: linear-gradient(270deg, #ff6ec4, #ff7e5f, #4adede, #ff6ec4); */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    /* color: transparent; */
-    /* animation: gradientMove 8s ease infinite; */
+    animation: gradientMove 8s ease infinite;
 }
 
 .title {
     color: #ff7e5f;
+    
+}
+
+.home h3 {
+    font-size: 30px;
+}
+
+.home p {
+    font-size: 20px;
 }
 
 .about {
     display: grid;
-    grid-template-columns: 250px 1fr;
+    grid-template-columns: 300px 1fr;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     border-radius: 16px;
     padding: 20px;
     column-gap: 20px;
     box-shadow: 0px 0px 3px rgba(255, 255, 255, 0.3);
+    width: 80%;
+    min-width: 800px;
+    justify-self: center;
 }
 
 .overview {
@@ -125,7 +136,7 @@ section {
 
 .profile {
     display: grid;
-    grid-template-rows: 2fr 1fr;
+    grid-template-rows: 5fr 2fr;
 }
 
 .image-container {
