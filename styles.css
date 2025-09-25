@@ -577,7 +577,7 @@ section {
     gap: 2rem;
     margin: 2rem 0;
     padding: 0 1rem;
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -633,7 +633,7 @@ section {
     transform: rotate(-90deg) scaleX(1.05) scaleY(0.95);
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 300px) {
     .certificates {
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -648,7 +648,7 @@ section {
     .cert-card h3 {
         font-size: 1.1rem;
     }
-}
+} */
 
 .cert-image {
     border-radius: 4px;
