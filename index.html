@@ -260,16 +260,34 @@
             <div class="form-container">
                 <div class="contact-form">
                     <h2>Contact</h2>
-                    <div class="user-input">
-                        <input placeholder="Your name..."/>
-                        <input placeholder="Your email..."/>
-                    </div>
-                    <textarea placeholder="Your message for me..."></textarea>
-                    <button class="send-btn">Send Message</button>
+                    <form id="contactForm">
+                        <div class="user-input">
+                            <input
+                                type="text" 
+                                placeholder="Your name..." 
+                                required
+                            />
+                            <input 
+                                type="email"
+                                placeholder="Your email..." 
+                                required
+                            />
+                        </div>
+                        <textarea placeholder="Your message for me..." required></textarea>
+                        <button type="submit" class="send-btn">Send Message</button>
+                    </form>
                 </div>
             </div>
-            
         </section>
+    </div>
+
+    <div class="modal-loader"></div>
+
+    <div id="successModal" class="send-modal">
+        <div class="send-modal-content">
+          <p>✅ Your message has been sent! </p>
+          <button id="closeSendModal">Close</button>
+        </div>
     </div>
     
     <script src="script.js"></script>

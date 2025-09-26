@@ -68,3 +68,17 @@ document.querySelectorAll('.skill').forEach(img => {
     const delay = (Math.random() * 2).toFixed(2); 
     img.style.animationDelay = `${delay}s`;
 });
+
+const form = document.getElementById("contactForm");
+const modal = document.getElementById("successModal");
+const closeBtn = document.getElementById("closeSendModal");
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+  modal.classList.add("show");
+});
+
+closeBtn.addEventListener("click", function() {
+  form.reset();
+  modal.classList.remove("show");
+});
