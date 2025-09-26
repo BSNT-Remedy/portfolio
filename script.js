@@ -1,4 +1,12 @@
-// alert("Welcome to my portfolio!");
+
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+
+  setTimeout(() => {
+    loader.classList.add("hidden");
+    document.body.classList.add("loaded");
+  }, 5000);
+});
 
 document.addEventListener("DOMContentLoaded", function () {
   const reveals = document.querySelectorAll(".reveal");
