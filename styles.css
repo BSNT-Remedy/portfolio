@@ -8,7 +8,7 @@ html {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: #121212; /* Dark background */
+    background: #121212;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -55,7 +55,7 @@ html {
   
 .intern::before {
     content: "100%";
-    animation: percent 5s ease-in-out;
+    animation: percent 4s ease-in-out;
 }
   
 @keyframes rotate {
@@ -125,6 +125,71 @@ html {
 #loader.hidden {
     opacity: 0;
     visibility: hidden;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(18, 18, 18, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    z-index: 9998;
+}
+
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+  /* Modal box */
+.modal {
+    background: #1e1e1e;
+    color: #fff;
+    padding: 2.5em 2em;
+    border-radius: 16px;
+    max-width: 420px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 1.5em 3em rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.6s ease;
+    position: relative;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal p {
+    font-size: 1em;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.modal button {
+    margin-top: 1.5em;
+    padding: 0.7em 1.5em;
+    border: none;
+    border-radius: 30px;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    color: white;
+    box-shadow: 0 0.5em 1.5em rgba(255, 126, 95, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.modal button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.7em 1.8em rgba(255, 126, 95, 0.6);
 }
 
 body {
@@ -252,8 +317,7 @@ body.loaded .reveal.active {
     z-index: 0;
   }
   
-  /* animated border */
-  .about::before {
+.about::before {
     position: absolute;
     content: '';
     display: block;
@@ -272,9 +336,9 @@ body.loaded .reveal.active {
     );
     animation: rotation 6s infinite linear;
     z-index: -2;
-  }
+}
   
-  .about::after {
+.about::after {
     position: absolute;
     content: '';
     inset: 2px;
@@ -285,16 +349,16 @@ body.loaded .reveal.active {
     box-shadow:
         0 0 8px rgba(227, 79, 38, 0.4),
         0 0 16px rgba(200, 50, 20, 0.2);
-  }
+}
   
-  @keyframes rotation {
+@keyframes rotation {
     0% {
       transform: rotateZ(0deg);
     }
     100% {
       transform: rotateZ(360deg);
     }
-  }
+}
   
 .overview {
     padding: 10px;

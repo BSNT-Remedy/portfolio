@@ -1,11 +1,21 @@
 
 window.addEventListener("load", () => {
   const loader = document.getElementById("loader");
+  const modal = document.getElementById("welcomeModal");
+  const closeBtn = document.getElementById("closeModal");
 
   setTimeout(() => {
     loader.classList.add("hidden");
+
+    setTimeout(() => {
+      modal.classList.add("show");
+    }, 200);
+  }, 4000);
+
+  closeBtn.addEventListener("click", () => {
+    modal.classList.remove("show");
     document.body.classList.add("loaded");
-  }, 5000);
+  });
 });
 
 document.addEventListener("DOMContentLoaded", function () {
