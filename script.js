@@ -1,5 +1,6 @@
 
 window.addEventListener("load", () => {
+  document.body.style.overflow = "hidden";
   const loader = document.getElementById("loader");
   const modal = document.getElementById("welcomeModal");
   const closeBtn = document.getElementById("closeModal");
@@ -15,6 +16,7 @@ window.addEventListener("load", () => {
   closeBtn.addEventListener("click", () => {
     modal.classList.remove("show");
     document.body.classList.add("loaded");
+    document.body.style.overflow = "scroll";
   });
 });
 
@@ -36,6 +38,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("scroll", revealOnScroll);
   revealOnScroll();
+});
+
+const radios = document.querySelectorAll('.radio-group input[type="radio"]');
+const schools = document.querySelectorAll('.school');
+const schoolLogos = document.querySelectorAll('.school-logo');
+
+schools.forEach((school, index) => {
+  school.addEventListener('click', () => {
+    radios[index].checked = true;
+    schoolLogos.forEach(logo => logo.classList.remove('active'));
+    schoolLogos[index].classList.add('active');
+
+    schools.forEach(s => s.classList.remove('active'));
+    school.classList.add('active');
+  });
+});
+
+radios.forEach((radio, index) => {
+  radio.addEventListener('change', () => {
+    schools.forEach(s => s.classList.remove('active'));
+    schools[index].classList.add('active');
+    schoolLogos.forEach(logo => logo.classList.remove('active'));
+    schoolLogos[index].classList.add('active');
+  });
 });
 
 document.querySelectorAll('.skill').forEach(img => {
