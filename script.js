@@ -75,10 +75,12 @@ const closeBtn = document.getElementById("closeSendModal");
 
 form.addEventListener("submit", function(e) {
   e.preventDefault();
+  document.body.style.overflow = "hidden";
   modal.classList.add("show");
 });
 
 closeBtn.addEventListener("click", function() {
   form.reset();
   modal.classList.remove("show");
+  document.body.style.overflow = "scroll";
 });
