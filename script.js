@@ -84,3 +84,24 @@ closeBtn.addEventListener("click", function() {
   modal.classList.remove("show");
   document.body.style.overflow = "scroll";
 });
+
+
+const checkbox = document.getElementById('checkbox');
+const navbar = document.querySelector('.navbar');
+
+checkbox.addEventListener('change', function() {
+  if(this.checked) {
+    navbar.style.display = 'block';
+  }else {
+    navbar.style.display = 'none';
+  }
+});
+
+const navlinks = document.querySelectorAll('.value');
+
+navlinks.forEach(link => {
+  link.addEventListener('click', function() {
+    navbar.style.display = 'none';
+    checkbox.checked = false;
+  })
+})
