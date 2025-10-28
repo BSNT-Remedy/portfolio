@@ -275,6 +275,7 @@ body.loaded .reveal.active {
 }
 
 .menu-bar {
+    display: none;
     position: fixed;
     top: 2%;
     right: 5%;
@@ -370,6 +371,9 @@ body.loaded .reveal.active {
 }
 
 @media (max-width: 768px) {
+    .menu-bar {
+        display: block;
+    }
     .navbar {
         display: none;
         position: fixed;

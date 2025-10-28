@@ -88,20 +88,29 @@ closeBtn.addEventListener("click", function() {
 
 const checkbox = document.getElementById('checkbox');
 const navbar = document.querySelector('.navbar');
+const mediaQuery = window.matchMedia('(max-width: 768px)');
 
-checkbox.addEventListener('change', function() {
-  if(this.checked) {
+function handleMediaChange(e) {
+  if(!e.matches) return;
+
+  if(checkbox.checked) {
     navbar.style.display = 'block';
   }else {
     navbar.style.display = 'none';
   }
+}
+
+checkbox.addEventListener('change', function() {
+  handleMediaChange(mediaQuery);
 });
+
+mediaQuery.addEventListener('change', handleMediaChange);
 
 const navlinks = document.querySelectorAll('.value');
 
 navlinks.forEach(link => {
   link.addEventListener('click', function() {
-    navbar.style.display = 'none';
     checkbox.checked = false;
+    checkbox.dispatchEvent(new Event('change'));
   })
 })
