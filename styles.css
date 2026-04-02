@@ -1065,6 +1065,7 @@ body.loaded .reveal.active {
 .python     { color: #3776AB; }
 .react      { color: #61DAFB; }
 .flask      { color: #BFBFBF; }
+.django     { color: #44b78b; }
 
 .skills {
     display: flex;
@@ -1110,6 +1111,9 @@ body.loaded .reveal.active {
 }
 .flask img      { 
     filter: drop-shadow(0 0 6px #BFBFBF) drop-shadow(0 0 12px #BFBFBF);
+}
+.django img      { 
+    filter: drop-shadow(0 0 6px #156D4C) drop-shadow(0 0 12px #156D4C);
 }
 
 .skill img:hover {
