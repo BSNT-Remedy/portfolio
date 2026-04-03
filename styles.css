@@ -4,6 +4,8 @@ html {
 
 #loader {
     position: fixed;
+    opacity: 0;
+    visibility: hidden;
     top: 0;
     left: 0;
     width: 100vw;
@@ -16,7 +18,7 @@ html {
     transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-.central {
+#loader.active .central {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,7 +32,7 @@ html {
       -0.5em -0.5em 1em yellow;
 }
   
-.external-shadow {
+#loader.active .external-shadow {
     width: 10em;
     height: 10em;
     border-radius: 50%;
@@ -55,7 +57,10 @@ html {
   
 .intern::before {
     content: "100%";
-    animation: percent 4s ease-in-out;
+}
+
+#loader.active .intern::before {
+    animation: percent 3s ease-in-out;
 }
   
 @keyframes rotate {
@@ -125,6 +130,11 @@ html {
 #loader.hidden {
     opacity: 0;
     visibility: hidden;
+}
+
+#loader.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 .modal-overlay {

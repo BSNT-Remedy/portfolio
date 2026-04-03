@@ -1,23 +1,32 @@
+const hasLoaded = sessionStorage.getItem("hasLoaded");
+const loader = document.getElementById("loader");
+const welcomeModal = document.getElementById("welcomeModal");
+const closeModalBtn = document.getElementById("closeModal");
 
-window.addEventListener("load", () => {
-  document.body.style.overflow = "hidden";
-  const loader = document.getElementById("loader");
-  const modal = document.getElementById("welcomeModal");
-  const closeBtn = document.getElementById("closeModal");
+if (!hasLoaded) {
+    loader.classList.add("active");
+    document.body.style.overflow = "hidden";
+    sessionStorage.setItem("hasLoaded", "true");
 
-  setTimeout(() => {
-    loader.classList.add("hidden");
+    window.addEventListener("load", () => {
+        setTimeout(() => {
+            loader.classList.remove("active");
+            setTimeout(() => {
+                welcomeModal.classList.add("show");
+            }, 200);
+        }, 3000);
+    });
+} else {
+    window.addEventListener("load", () => {
+        document.body.style.overflow = "scroll";
+        document.body.classList.add("loaded");
+    });
+}
 
-    setTimeout(() => {
-      modal.classList.add("show");
-    }, 200);
-  }, 4000);
-
-  closeBtn.addEventListener("click", () => {
-    modal.classList.remove("show");
-    document.body.classList.add("loaded");
-    document.body.style.overflow = "scroll";
-  });
+closeModalBtn.addEventListener("click", () => {
+  welcomeModal.classList.remove("show");
+  document.body.classList.add("loaded");
+  document.body.style.overflow = "scroll";
 });
 
 document.addEventListener("DOMContentLoaded", function () {
