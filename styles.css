@@ -1131,6 +1131,54 @@ body.loaded .reveal.active {
     filter: drop-shadow(0 0 6px #E34F26) drop-shadow(0 0 12px #E34F26);
 }
 
+.skill {
+  position: relative;
+  transition: all 0.2s;
+  font-size: 17px;
+  padding: 1rem 0;
+  width: fit-content;
+  box-sizing: border-box;
+  --bg: linear-gradient(135deg, #a940fd, #5b46e8);
+  --color: #fff;
+  --tooltip-bg: #fff;
+  --tooltip-color: #303030;
+  --margin: 0.5rem;
+}
+
+.tooltip {
+  position: absolute;
+  top: calc(-1 * var(--margin));
+  left: 50%;
+  transform: translateX(-50%) translateY(0%) scale(0);
+  padding: 0.3em 0.6em;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.07, 1.17, 0.44, 1.41);
+  background: var(--tooltip-bg);
+  color: var(--tooltip-color);
+  border-radius: 0.5rem;
+  z-index: 99999;
+}
+
+.tooltip::before {
+  position: absolute;
+  content: "";
+  height: 0.6em;
+  width: 0.6em;
+  bottom: -0.2em;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  background: var(--tooltip-bg);
+  border-bottom-right-radius: 0.175rem;
+}
+
+.skill:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(-100%) scale(1);
+}
+
 @media (max-width: 768px) {
     .skill {
         flex: 0 0 calc(33.333% - 20px);
